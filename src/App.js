@@ -11,12 +11,12 @@ import Alert from './components/Alert';
 //   BrowserRouter as Router,
 //   Switch,
 //   Route,
-//   Link
+//   // Link
 // } from "react-router-dom";
 function App() {
   const [mode, setMode] = useState('light');
 
-  const [mode1, setMode1] = useState('light');
+  // const [mode1, setMode1] = useState('light');
 
   const [alert, setAlert] = useState(null);
 
@@ -30,22 +30,22 @@ function App() {
        },2000)
   }
    
-  const toggleMode1 = () =>{
+  // const toggleMode1 = () =>{
 
-    if (mode1 === 'light') {
-      setMode1('dark');
-      // document.body.style.backgroundColor ='#121212';
-      document.body.style.backgroundColor =' #e7ebad';
-      document.body.style.color ='black';
-      showAlert("Read mode has been enabled","success");
-  }  else {
-    setMode1('light');
-    document.body.style.backgroundColor ='white';
-    document.body.style.color ='black';
-    showAlert("Light mode has been enabled","success");
-  }
+  //   if (mode1 === 'light') {
+  //     setMode1('dark');
+  //     // document.body.style.backgroundColor ='#121212';
+  //     document.body.style.backgroundColor =' #e7ebad';
+  //     document.body.style.color ='black';
+  //     showAlert("Read mode has been enabled","success");
+  // }  else {
+  //   setMode1('light');
+  //   document.body.style.backgroundColor ='white';
+  //   document.body.style.color ='black';
+  //   showAlert("Light mode has been enabled","success");
+  // }
 
-}
+// }
   const toggleMode = () =>{
   
 
@@ -67,7 +67,8 @@ function App() {
   return (
     <> 
     {/* <Router> */}
-    <Navbar title= "Nav" mode={mode} mode1={mode1} toggleMode={toggleMode}  toggleMode1={toggleMode1} />
+    {/* <Navbar title= "Nav" mode={mode} mode1={mode1} toggleMode={toggleMode}  toggleMode1={toggleMode1} /> */}
+    <Navbar title= "Nav" mode={mode} toggleMode={toggleMode}   />
     <Alert alert={alert}/>
     <div className='container my-3'> 
     {/* <Switch> */}
@@ -75,12 +76,13 @@ function App() {
       eg /a --> 1
       /a/b -->  2 if exact use nhi kiya toh 2nd pe bhi 1st access ho jayega  */}
           {/* <Route exact path="/about">
-          <About />
-          </Route> */}
-          {/* <Route exact path="/"> */}
-          <TextForm showAlert={showAlert} heading="Enter your text" mode={mode} mode1={mode1}/>
-          {/* </Route>
-    </Switch> */}
+          <About mode={mode}  />
+          </Route>
+          <Route exact path="/"> */}
+          {/* <TextForm showAlert={showAlert} heading="Enter your text" mode={mode} mode1={mode1}/> */}
+          <TextForm showAlert={showAlert} heading="Enter your text" mode={mode}/>
+          {/* </Route> */}
+    {/* </Switch> */}
     </div>
     {/* </Router> */}
     </>
