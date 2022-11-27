@@ -11,7 +11,7 @@ import Alert from './components/Alert';
 //   BrowserRouter as Router,
 //   Switch,
 //   Route,
-//   // Link
+//   // Link   
 // } from "react-router-dom";
 function App() {
   const [mode, setMode] = useState('light');
